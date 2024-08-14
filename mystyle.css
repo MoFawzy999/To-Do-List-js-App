@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+li {
+  list-style-type: none;
+}
+svg{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+aside {
+  border-right: 1px solid #6c757d80;
+  min-height: 100vh;
+}
+aside ul li {
+  cursor: pointer;
+}
+aside ul li:hover,
+aside ul li.active {
+  background-color: #f8f9facc;
+  color: #1576d6;
+}
+section .head button {
+  border: 1px solid #00b4d8;
+}
+section .head button:hover {
+  border-color: #00b4d8 !important;
+}
+section .head button svg {
+  color: #00b4d8;
+}
+.modal .modal-footer .cancel , .modal .modal-footer .confirm{
+  padding: 5px 30px !important;
+}
+.modal .modal-footer .cancel{
+  border: 1px solid #6c757d80;
+}
+.modal .modal-footer .confirm{
+  background-color: #00B4D8;
+  color: white !important;
+}
+.modal .modal-body input::placeholder{
+  color:  #6C757D80 ;
+}
+.tasks li{
+  border: 1px solid #00b4d8 ;
+}
+.tasks .task span{
+  color: #6C757D;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+.tasks .task input[type="checkbox"]{
+  --webkit-apperance : none ;
+  appearance: none;
+  display: none;
+}
+.toggle-check{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  cursor: pointer;
+}
+.toggle-check::before , .toggle-check::after{
+  position: absolute;
+  border-radius: 50%;
+}
+.toggle-check::before{
+  content: "";
+  border: 2px solid #00b4d8 ;
+  width: 32px ; 
+  height: 32px;
+  padding: 15px;
+}
+.toggle-check::after{
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: 900;
+  background-color: #00b4d8;
+  color: white;
+  font-size: 16px;
+  padding: 15px;
+  width: 32px ; 
+  height: 32px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+.tasks .task input[type="checkbox"]:checked + .toggle-check::after{
+  opacity: 1;
+}
+.update , .delete{
+  width: 32px;
+  height: 32px;
+  border: 2px solid #00b4d8 ;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 15px;
+  position: relative;
+}
+.delete svg , .update svg {
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: 0.4s;
+}
+.delete svg{
+  color: red;
+}
+.update svg {
+  color: green;
+}
+.update:hover{
+  background-color: green;
+}
+.delete:hover{
+  background-color: red;
+}
+.delete:hover svg ,.update:hover svg {
+  color: white;
+}
+.status{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50px;
+}
+.delete{
+  margin-left: 8px;
+}
+[contenteditable="true"] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px; 
+  border-radius: 4px;
+}
+[contenteditable="true"]:focus {
+  outline: 2px solid #007bff; 
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+  aside {
+    border-right: none;
+    border-bottom: 1px solid #6c757d80;
+    min-height: auto;
+    padding-top: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  aside ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center ;
+  }
+  aside ul li {
+    padding: 10px;
+    text-align: center;
+  }
+  aside svg {
+   color: #00b4d8;
+   padding-right: 10px;
+   cursor: pointer;
+  }
+  aside ul li{
+   position: relative;
+  }
+  aside ul li:after{
+   content: "";
+   height: 1px;
+   width: 0 ;
+   background-color: #1576d6;
+   position: absolute;
+   left: 0;
+   bottom: -1px;
+   transition: 0.3s;
+  }
+  aside ul li:hover::after,
+  aside ul li.active::after {
+   width: 100%;
+}
+  section .head h2 {
+    display: none;
+  }
+  section .head button {
+     display: none;
+  }
+}
