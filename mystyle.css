@@ -28,7 +28,7 @@ aside ul li {
 }
 aside ul li:hover,
 aside ul li.active {
-  background-color: #f8f9facc;
+  background-color: #f8f9fa;
   color: #1576d6;
 }
 section .head button {
@@ -207,4 +207,11 @@ section .head button svg {
   section .head button {
      display: none;
   }
+  .task {
+    flex-direction: column;
+    justify-content: center !important;
+    gap: 20px ;
+    text-align: center;
+  }
+  
 }
